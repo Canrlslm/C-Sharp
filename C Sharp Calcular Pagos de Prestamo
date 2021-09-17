@@ -1,0 +1,32 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+class Program {
+  public static void Main (string[] args) {
+    double Monto, TasaInt, pago, PagoA, NAños, a1, a2, a3, a4, a5, a6, a7;
+
+    Console.WriteLine ("Digite monto:");
+    Monto = double.Parse(Console.ReadLine());
+    Console.WriteLine ("Digite Tasa de interes:");
+    TasaInt = double.Parse(Console.ReadLine());
+    Console.WriteLine ("Digite pago anual:");
+    PagoA = double.Parse(Console.ReadLine());
+    Console.WriteLine ("Digite Numero de años:");
+    NAños = double.Parse(Console.ReadLine());
+    a1=Monto/PagoA;
+    a2=TasaInt * a1;
+    //Denominador
+    a3=TasaInt/PagoA;
+    a4=a3 + 1; 
+    a5=(PagoA * NAños)*-1;
+    a6= Math.Pow (a4, a5);
+    a7= 1 - a6;
+
+    pago= a2/a7;
+
+    Console.WriteLine ("El pago es:" + pago);
+  }
+}
